@@ -1,16 +1,17 @@
 info = document.querySelector('#info');
 
-function ready() {
-    document.addEventListener('click', () => {
-        info.textContent = 'clicked';
-    })
-
+function time() {
+    info.textContent = 'clicked';
     setTimeout(() => {
         info.textContent = 'click NOW';
+        let elapsedTime = performance.now()
         document.addEventListener('click', () => {
-            info.textContent = 'reaction time was 000';
+            const reactionTime = (performance.now() - elapsedTime).toFixed(0);
+            info.textContent = `${reactionTime}ms`;
         })
-    }, 3000);
+    }, 5000);
 }
 
-ready();
+(() => {
+    document.addEventListener('click', time);
+})();
