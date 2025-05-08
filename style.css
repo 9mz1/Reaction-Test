@@ -1,14 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: #d0d4d8;
+    color: #F3F4F6;
 }
 
 body {
-    font-family: "Lexend Deca", sans-serif;
+    font-family: "Montserrat", sans-serif;
+    background-color: #111111;
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    border: 2px solid blue;
+    min-height: 100vh;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header h1 {
+    font-size: 3rem;
+    font-weight: 800;
 }
 
 .container {
@@ -16,17 +37,27 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: 40px;
 
     margin: 0;
     padding: 20px;
-    position: absolute;
+    /* position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    height: 90vh;
-    width: 95vw;
+    transform: translate(-50%, -50%); */
+    height: 67vh;
+    width: 65vw;
     background-color: red;
     border-radius: 30px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.container #info {
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.container #record, .container #restartText {
+    font-size: 1.3rem;
+    font-weight: 500;
 }
