@@ -6,6 +6,7 @@ box = document.querySelector('.container');
 let isGreen = false;
 
 let startTime = Math.floor(Math.random() * 5000) + 2000;
+let highScore = Infinity;
 
 function startTest() {
     if (!isGreen) {
@@ -15,11 +16,20 @@ function startTest() {
             box.style.backgroundColor = 'green';
             isGreen = true;
             let elapsedTime = performance.now()
+
             document.addEventListener('click', () => {
-                const reactionTime = (performance.now() - elapsedTime).toFixed(0);
+                let reactionTime = (performance.now() - elapsedTime).toFixed(0);
+                reactionTime = Number(reactionTime);
                 testInfo.textContent = `${reactionTime}ms`;
+
+                if (reactionTime < highScore) {
+                    highScore = reactionTime;
+                    recordText.textContent = `Fastest Time: ${highScore}ms`;
+                }
+                
                 restartText.style.display = 'block';
                 recordText.style.display = 'block';
+            
                 restartTest()
             }, { once: true });
         }, startTime);
@@ -31,6 +41,7 @@ function startTest() {
 }
 
 function restartTest() {
+    document.removeEventListener('click', startTest);
     document.addEventListener('click', () => {
         restartText.style.display = 'none';
         box.style.backgroundColor= 'red';
