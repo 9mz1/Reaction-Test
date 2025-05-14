@@ -17,7 +17,7 @@ function startTest() {
             isGreen = true;
             let elapsedTime = performance.now()
 
-            document.addEventListener('click', () => {
+            box.addEventListener('click', () => {
                 let reactionTime = (performance.now() - elapsedTime).toFixed(0);
                 reactionTime = Number(reactionTime);
                 testInfo.textContent = `${reactionTime}ms`;
@@ -41,14 +41,14 @@ function startTest() {
 }
 
 function restartTest() {
-    document.removeEventListener('click', startTest);
-    document.addEventListener('click', () => {
+    box.removeEventListener('click', startTest);
+    box.addEventListener('click', () => {
         restartText.style.display = 'none';
         box.style.backgroundColor= 'red';
         isGreen = false
         info.textContent = "Click Here";
-        document.addEventListener('click', startTest, { once: true } );
+        box.addEventListener('click', startTest, { once: true } );
     });   
 }
 
-document.addEventListener('click', startTest, { once: true } );
+box.addEventListener('click', startTest, { once: true } );

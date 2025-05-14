@@ -12,12 +12,26 @@ body {
     background-color: #111111;
 }
 
+.active {
+    font-weight: 600;
+    background-color: #060606;
+}
+
+button {
+    font-family: "Montserrat", sans-serif;
+    border-radius: 6px;
+    background-color: #000000;
+    border: none;
+    padding: 15px 35px;
+    cursor: pointer;
+}
+
 .page-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
     min-height: 100vh;
 }
 
@@ -56,6 +70,7 @@ body {
     background-color: red;
     border-radius: 30px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    cursor: pointer;
 }
 
 .container #info {
